@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import {useNavigate } from 'react-router-dom';
 
+
 function LogInPage() {
-    const[username, setUsername] = useState('');
+    const[hauEmail, setHauEmail] = useState('');
     const[password, setPassword] = useState('');
     const navi = useNavigate();
 
     const login = () => {
-        //checking if username & pass exist, not sure what db ang gagamitin 
-        // logic here
+        const user = users.find((e)=> e.HauEmail === hauEmail && e.password === password);
 
-        if (username && password) {
+        if (user) {
             //pa uncomment nalang navi to dashboard 
             //navi('/dashboard');
         } else {
-            alert('Please fill in the username & password');
+            alert('Please fill in the HAU Email & password');
         }
     };
 
@@ -22,9 +22,9 @@ function LogInPage() {
         <div>
             <h1>LOGIN</h1>
             <div className='loginBox'>
-            <input placeholder='UserName' onChange={(e)=> setUsername(e.target.value)}/>
+            <input placeholder='HAU Email' onChange={(e)=> setUsername(e.target.value)}/>
             <br />
-            <input placeholder='PassWord' onChange={(e)=> setPassword(e.target.value)}/>
+            <input placeholder='Password' onChange={(e)=> setPassword(e.target.value)}/>
             <br />
             <button onClick={login}>LOGIN</button>
             </div>
