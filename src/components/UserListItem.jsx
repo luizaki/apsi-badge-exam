@@ -1,5 +1,14 @@
 import { useState } from 'react';
 
+
+/**
+ * 
+ * @param {Object} user - A user object.
+ * @param {function} onUpdate - Callback to update a user object.
+ * @param {function} onDelete - Callback to delete a user object. 
+ * @param {boolean} disabled - A flag whether an element should be disabled. 
+ * @returns {JSXElement}
+ */
 const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
