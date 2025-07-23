@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // Import CSS here
 
 const Sidebar = ({ hidden = false }) => {
     const [isHidden, setIsHidden] = useState(hidden);
+    const loc = useLocation();
 
     const toggleSidebarView = () => setIsHidden(!isHidden);
 
@@ -24,7 +25,8 @@ const Sidebar = ({ hidden = false }) => {
                 <nav>
                     <ul className='sidebar-items'>
                         {sidebarItems.map((item, idx) => (
-                            <li key={idx}>
+                            <li key={idx}
+                                className={loc.pathname === item.path ? 'active' : ''}>
                                 <Link to={item.path}>
                                     {item.label}
                                 </Link>
