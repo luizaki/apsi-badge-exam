@@ -1,7 +1,6 @@
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const existingEmails = ['jdoe@student.hau.edu.ph']; //papalit nalang if may db na
+import { users } from '../userData';
 
 function RegPage() {
     const navi = useNavigate();
@@ -18,12 +17,20 @@ function RegPage() {
         setForm({...form, [e.target.key]: e.target.value});
     };
     const register = () => {
-        if(existingEmails.includes(form.email)) {
+        const emailExists = users.some((user)=> user.HauEmail === form.HauEmail);
+        if(emailExists) {
             alert('HAU Email already has an account.');
         } else if (form.password !== form.confirmPass) {
             alert('Passwords do not match.');
         } else {
-            //add user to db, then nav to dashboard
+            users.push({
+                name: form.name,
+                studNum: form.studNum,
+                address: form.Address,
+                HauEmail: form.HauEmail,
+                password: form.password,
+            });
+            alert('USER REGISTERED');
             //navi('/dashboard');
         }
     };
