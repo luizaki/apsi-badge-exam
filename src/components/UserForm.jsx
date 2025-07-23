@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const UserForm = ({ onAddUser, disabled = False}) => {
+const UserForm = ({ onAddUser, disabled = false}) => {
     const [userName, setUserName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const handleSubmit = async (e) => {
