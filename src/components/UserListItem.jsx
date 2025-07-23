@@ -36,7 +36,7 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
         setIsUpdating(false);
 
         if (success) {
-            setIsUpdating(false);
+            setIsEditing(false);
         }
 
     };
