@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as userService from '../services/userService';
+import * as userService from '../api/userService';
 
 /**
  * Custom hook to manage user state and operations.
@@ -7,7 +7,7 @@ import * as userService from '../services/userService';
  */
 export const useUser = () => {
     const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useStat(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     // fetch users on mount
