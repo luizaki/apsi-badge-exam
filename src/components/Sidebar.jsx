@@ -7,6 +7,13 @@ const Sidebar = ({ hidden = false }) => {
 
     const toggleSidebarView = () => setIsHidden(!isHidden);
 
+    const sidebarItems = [
+        { label: '🔍 Read Records', path: '/read' },
+        { label: '➕ Add Records', path: '/add' },
+        { label: '✏️ Update Records', path: '/update' },
+        { label: '🗑️ Delete Records', path: '/delete' }
+    ]
+
     return (
         <div className='sidebar'>
             <button onClick={toggleSidebarView}>
@@ -15,12 +22,14 @@ const Sidebar = ({ hidden = false }) => {
 
             {!isHidden && (
                 <nav>
-                    {/* This might likely converted into mapping the navlist instead */}
                     <ul className='sidebar-items'>
-                        <li><Link>🔍 Read Records</Link></li>
-                        <li><Link>➕ Add Records</Link></li>
-                        <li><Link>✏️ Update Records</Link></li>
-                        <li><Link>🗑️ Delete Records</Link></li>
+                        {sidebarItems.map((item, idx) => (
+                            <li key={idx}>
+                                <Link to={item.path}>
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             )}
