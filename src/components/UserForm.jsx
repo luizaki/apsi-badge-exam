@@ -25,6 +25,7 @@ const createLocalUser = (user) => {
 const UserForm = () => {
 
     const initialState = {
+        id: users.length + 1,
         name: '',
         studNum: '',
         HauEmail: '',
@@ -56,7 +57,7 @@ const UserForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const emptyFields = Object.values(user).some(field => !field.trim());
+        const emptyFields = Object.values(user).some(field => typeof(field) === String && !field.trim());
 
         if (emptyFields) {
             alert('Please fill out all fields.');
@@ -83,6 +84,8 @@ const UserForm = () => {
             } else {
                 throw new Error('Failed to create user');
             }
+
+            console.log(users);
         } catch (err) {
             setIsSuccess(false);
             setError(err.message);
