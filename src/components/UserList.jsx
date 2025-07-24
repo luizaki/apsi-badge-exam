@@ -1,4 +1,5 @@
 import UserListItem from "./UserListItem";
+import "../styles/UserList.css";
 
 /**
  * 
@@ -19,7 +20,7 @@ const UserList = ({ users, onUpdateUser, onDeleteUser, disabled = false }) => {
     }
 
     return (
-        <ul>
+        <ul className='user-list'>
             { users.map(user => (
                 <UserListItem
                     key={user.id}
