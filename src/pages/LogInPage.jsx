@@ -11,8 +11,7 @@ function LogInPage() {
         const user = users.find((e)=> e.HauEmail === hauEmail && e.password === password);
 
         if (user) {
-            //pa uncomment nalang navi to dashboard 
-            //navi('/dashboard');
+            navi('/dashboard');
         } else {
             alert('Please fill in the HAU Email & password');
         }
