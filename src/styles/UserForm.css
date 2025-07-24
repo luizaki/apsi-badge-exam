@@ -13,7 +13,7 @@
     border-radius: 5px;
 }
 
-.input-form {
+.input-field {
     width: 90%;
     border: 0;
     padding: 1rem;
@@ -21,15 +21,15 @@
     margin-bottom: 10px;
 }
 
-.input-form:user-valid {
+.input-field:user-valid {
     border: 1px solid var(--green);
 }
 
-.input-form:user-invalid {
+.input-field:user-invalid {
     border: 1px solid var(--red);
 }
 
-.input-form:placeholder-shown {
+.input-field:placeholder-shown {
     border: 0;
 }
 

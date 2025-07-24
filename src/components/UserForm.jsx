@@ -99,7 +99,7 @@ const UserForm = () => {
         <>  
             <form onSubmit={ handleSubmit } className='user-form'>
                 <input
-                    className='input-form'
+                    className='input-field'
                     type='text'    
                     value={ user.name }
                     placeholder='Enter user name'
@@ -108,7 +108,7 @@ const UserForm = () => {
                 />
 
                 <input
-                    className='input-form'
+                    className='input-field'
                     type='text'    
                     value={ user.studNum }
                     placeholder='Enter student number'
@@ -117,7 +117,7 @@ const UserForm = () => {
                 />
 
                 <input
-                    className='input-form'
+                    className='input-field'
                     type='email'    
                     value={ user.HauEmail }
                     placeholder='Enter email'
@@ -126,7 +126,7 @@ const UserForm = () => {
                 />
 
                 <input
-                    className='input-form'
+                    className='input-field'
                     type='password'    
                     value={ user.password }
                     placeholder='Enter password'
