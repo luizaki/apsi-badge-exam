@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// Import CSS here
+import '../styles/Sidebar.css';
 
-const Sidebar = ({ hidden = false }) => {
+const Sidebar = ({ hidden = false, onToggle }) => {
     const [isHidden, setIsHidden] = useState(hidden);
     const loc = useLocation();
 
-    const toggleSidebarView = () => setIsHidden(!isHidden);
+    const toggleSidebarView = () => {
+        const newState = !isHidden;
+        setIsHidden(newState);
+        onToggle?.(newState);
+    }
 
     const sidebarItems = [
         { label: '🔍 Read Records', path: '/read' },
@@ -16,7 +20,7 @@ const Sidebar = ({ hidden = false }) => {
     ]
 
     return (
-        <div className='sidebar'>
+        <div className={`sidebar ${isHidden ? 'hidden' : ''}`}>
             <button onClick={toggleSidebarView}>
                 {isHidden ? '⇥' : '⇤'}
             </button>
