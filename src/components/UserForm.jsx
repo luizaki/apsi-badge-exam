@@ -11,6 +11,11 @@ const ACTIONS = {
     RESET: 'RESET'
 }
 
+/**
+ * 
+ * @param {Object} user - A user object
+ * @returns {boolean} Success status of the operation
+ */
 const createLocalUser = (user) => {
     try {
         users.push(user);
