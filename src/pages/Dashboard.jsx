@@ -1,8 +1,9 @@
-import { users } from '../userData.js';
+import { useUserContext } from '../providers/UserProvider.jsx';
 import PageLayout from '../components/PageLayout.jsx';
 import '../styles/Dashboard.css';
 
 function Dashboard() {
+    const { users } = useUserContext();
 
     return (
         <PageLayout title='Dashboard'>
