@@ -1,0 +1,13 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.user-list {
+    display: grid;
+    list-style-type: none;
+    padding: 2rem;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    gap: 1rem;
+}

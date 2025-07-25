@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import '../styles/UserListItem.css';
 
 /**
  * 
@@ -14,25 +14,28 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
     const [isUpdating, setIsUpdating] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [editName, setEditName] = useState(user.name);
+    const [editEmail, setEditEmail] = useState(user.HauEmail);
 
     const handleEdit = () => {
         setIsEditing(true);
-        setEditName(user.name)
+        setEditName(user.name);
+        setEditEmail(user.HauEmail);
     };
 
     const handleCancelEdit = () => {
         setIsEditing(false);
         setEditName(user.name)
+        setEditEmail(user.HauEmail);
     };
 
     const handleSaveEdit = async () => {
-        if (!editName?.trim() || editName === user.name) {
+        if (!editName?.trim() || !editEmail?.trim() || editName === user.name && editEmail === user.HauEmail) {
             handleCancelEdit();
             return;
         }
 
         setIsUpdating(true);
-        const success = await onUpdate(user.id, editName);
+        const success = await onUpdate(user.id, editName, editEmail);
         setIsUpdating(false);
 
         if (success) {
@@ -45,18 +48,20 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
         if (window.confirm(`Are you sure you want to delete "${user.name}?"`)) {
             setIsDeleting(true);
             await onDelete(user.id);
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            setIsDeleting(false);
         }
+
     };
 
 
     const itemDisabled = disabled || isUpdating || isDeleting;
 
     return (
-        <li>
-            <strong>[{user.id}]</strong>
-
+        <li className='list-item'>
             {isEditing ? (
-                <input 
+                <input
+                    className='edit-input-field'
                     type="text" 
                     value={editName}
                     onChange={(e) => setEditName(e.target.value)}
@@ -68,18 +73,38 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
                     }}
                 />
             ) : (
-                <span>{user.name}</span>                
+                <span className='display'>{editName}</span>                
             )}
+
+            {isEditing ? (
+                <input 
+                    className='edit-input-field'
+                    type="email" 
+                    value={editEmail}
+                    onChange={(e) => setEditEmail(e.target.value)}
+                    disabled={isUpdating}
+                    autoFocus
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleSaveEdit();
+                        if (e.key === 'Escape') handleCancelEdit(); 
+                    }}
+                />
+            ) : (
+                <span className='display'>{editEmail}</span>                
+            )}
+
 
             {isEditing ? (
                 <>
                     <button
+                        className='btn'
                         onClick={handleSaveEdit}
                         disabled={isUpdating || !editName?.trim()}
                     >
                         {isUpdating ? 'Saving...' : 'Save'}
                     </button>
                     <button
+                        className='btn'
                         onClick={handleCancelEdit}
                         disabled={isUpdating}
                     >
@@ -88,18 +113,26 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
                 </>
             ) : (
                 <>
-                    <button
-                        onClick={handleEdit}
-                        disabled={itemDisabled}
-                    >
+                    {onUpdate && (
+                        <button
+                            className='btn'
+                            onClick={handleEdit}
+                            disabled={itemDisabled}
+                        >
+                        {/* Change this to a pencil icon */}
                         Edit
-                    </button>
-                    <button
-                        onClick={handleDelete}
-                        disabled={itemDisabled}
-                    >
-                        {isDeleting ? 'Deleting...' : 'Delete'}
-                    </button>
+                        </button>
+                    )}
+
+                    {onDelete && (
+                        <button
+                            className='btn'
+                            onClick={handleDelete}
+                            disabled={itemDisabled}
+                        >
+                            {isDeleting ? 'Deleting...' : 'Delete'}
+                        </button>
+                    )}
 
                 </>
             )}

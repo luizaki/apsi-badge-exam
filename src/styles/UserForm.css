@@ -1,0 +1,58 @@
+/* Basic styling only. Add styles specific to UserForm here */
+
+:root {
+    --green: #4CAF50;
+    --red: #f44336;
+}
+
+.user-form {
+    border: 1px solid darkgray;
+    padding: 20px;
+    width: 420px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.input-field {
+    width: 90%;
+    border: 0;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.input-field:user-valid {
+    border: 1px solid var(--green);
+}
+
+.input-field:user-invalid {
+    border: 1px solid var(--red);
+}
+
+.input-field:placeholder-shown {
+    border: 0;
+}
+
+/* TODO: center this dialog */
+.dialog {
+    position: absolute;
+    margin: auto;
+    top: 40%;
+    border-radius: 20px;
+}
+
+.dialog-btn {
+    color: white;
+    padding: 0.5em 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.success {
+    background-color: var(--green);
+}
+
+.failure {
+    background-color: var(--red);
+}
