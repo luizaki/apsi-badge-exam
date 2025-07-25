@@ -1,6 +1,8 @@
 /* TODO: discretion to integrate this css to App.css
 for ease lang to in merging */
 .sidebar {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,8 +40,7 @@ for ease lang to in merging */
 }
 
 .logout-button {
-    margin-top: 10rem;
-
+    margin: auto 1.5rem 1rem;
 }
 
 @media (max-width: 768px) {
