@@ -2,6 +2,7 @@ import { useState, useReducer } from 'react';
 import { users } from '../userData.js'
 import { generateHash } from '../utils/hash.js';
 import '../styles/UserForm.css';
+import { useUserContext } from '../providers/UserProvider.jsx';
 
 const ACTIONS = {
     SET_NAME: 'SET_NAME',
@@ -11,23 +12,9 @@ const ACTIONS = {
     RESET: 'RESET'
 }
 
-/**
- * 
- * @param {Object} user - A user object
- * @returns {boolean} Success status of the operation
- */
-const createLocalUser = (user) => {
-    try {
-        users.push(user);
-        return true;
-    } catch (err) {
-        console.error('Error creating user:', err);
-        return false;
-    }
-}
-
-
 const UserForm = () => {
+
+    const {addUser, users} = useUserContext();
 
     const initialState = {
         id: users.length + 1,
@@ -81,7 +68,7 @@ const UserForm = () => {
         }
 
         try {
-            const success = createLocalUser(newUser);
+            const success = addUser(newUser);
 
             if (success) {
                 setIsSuccess(true);
