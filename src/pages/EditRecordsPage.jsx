@@ -1,5 +1,5 @@
+import PageLayout from '../components/PageLayout.jsx';
 import UserList from '../components/UserList';
-import Sidebar from '../components/Sidebar.jsx';
 import { useUserContext } from '../providers/UserProvider.jsx';
 
 export default function EditRecordsPage() {
@@ -7,14 +7,12 @@ export default function EditRecordsPage() {
     const {updateUser, users} = useUserContext();
 
     return (
-        <>
-            <Sidebar />
+        <PageLayout title={'Update Records'}>
             <UserList 
                 users={users}
                 onUpdateUser={updateUser}
                 disabled={false}
             />
-
-        </>
+        </PageLayout>
     );
 };

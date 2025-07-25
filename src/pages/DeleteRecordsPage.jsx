@@ -1,6 +1,5 @@
-import { users } from '../userData.js';
+import PageLayout from '../components/PageLayout.jsx';
 import UserList from '../components/UserList';
-import Sidebar from '../components/Sidebar.jsx';
 import { useUserContext } from '../providers/UserProvider.jsx';
 
 export default function EditRecordsPage() {
@@ -8,14 +7,12 @@ export default function EditRecordsPage() {
     const {deleteUser, users} = useUserContext();
 
     return (
-        <>
-            <Sidebar />
+        <PageLayout title={'Delete Records'}>
             <UserList
                 users={users}
                 onDeleteUser={deleteUser}
                 disabled={false}
             />
-
-        </>
+        </PageLayout>
     );
 };

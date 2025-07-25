@@ -1,11 +1,10 @@
 import UserForm from "../components/UserForm";
-import Sidebar from "../components/Sidebar";
+import PageLayout from "../components/PageLayout";
 
 export default function AddRecordsPage() {
     return (
-        <>  
-            <Sidebar />
+        <PageLayout title={'Add Records'}>
             <UserForm />
-        </>
+        </PageLayout>
     )
 }
