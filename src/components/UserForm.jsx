@@ -1,5 +1,4 @@
 import { useState, useReducer } from 'react';
-import { users } from '../userData.js'
 import { generateHash } from '../utils/hash.js';
 import '../styles/UserForm.css';
 import { useUserContext } from '../providers/UserProvider.jsx';
@@ -47,9 +46,9 @@ const UserForm = () => {
     const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const emptyFields = Object.values(user).some(field => typeof(field) === String && !field.trim());
+        e.preventDefault();    
+        
+        const emptyFields = Object.values(user).some(field => typeof(field) === 'string' && !field?.trim());
 
         if (emptyFields) {
             alert('Please fill out all fields.');
