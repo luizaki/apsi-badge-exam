@@ -17,13 +17,12 @@ for ease lang to in merging */
 }
 
 .toggle-button {
-    position: absolute;
-    right: 10px;
+    position: fixed;
+    left: calc(20% + 20px);
 }
 
 .sidebar.hidden .toggle-button {
-    right: 50%;
-    transform: translateX(50%);
+    left: 20px;
 }
 
 .sidebar-items {
