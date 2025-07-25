@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import UserListItem from "./UserListItem";
 import "../styles/UserList.css";
 
@@ -10,7 +11,13 @@ import "../styles/UserList.css";
  * @returns {JSXElement}
  */
 
+// TODO: Add useEffect here for automatically updating the users array.
+// TODO: implement dependency injection to adapt whether we use in-memory db (array), localStorage, etc.
+
 const UserList = ({ users, onUpdateUser, onDeleteUser, disabled = false }) => {
+
+    
+
     if (users.length === 0) {
         return (
             <div>
