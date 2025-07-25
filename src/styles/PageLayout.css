@@ -1,0 +1,16 @@
+/* TODO: discretion to integrate this css to App.css
+for ease lang to in merging */
+.page-layout {
+    display: flex;
+}
+
+.page-layout.sidebar-hidden .content {
+    margin-left: 60px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: 100vh;
+    flex: 1;
+}
