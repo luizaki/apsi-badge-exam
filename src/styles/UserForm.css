@@ -33,6 +33,7 @@
     border: 0;
 }
 
+/* TODO: center this dialog */
 .dialog {
     position: absolute;
     margin: auto;
