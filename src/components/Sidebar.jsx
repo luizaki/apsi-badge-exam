@@ -1,14 +1,25 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-// Import CSS here
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import '../styles/Sidebar.css';
 
-const Sidebar = ({ hidden = false }) => {
+const Sidebar = ({ hidden = false, onToggle }) => {
     const [isHidden, setIsHidden] = useState(hidden);
     const loc = useLocation();
+    const navi = useNavigate();
 
-    const toggleSidebarView = () => setIsHidden(!isHidden);
+    const toggleSidebarView = () => {
+        const newState = !isHidden;
+        setIsHidden(newState);
+        onToggle?.(newState);
+    }
+
+    const handleLogout = () => {
+        navi('/');
+    }
 
     const sidebarItems = [
+        // TODO: wireframe unclear on how to redirect to dashboard so adding it for now
+        { label: '📊 Dashboard', path: '/dashboard' },
         { label: '🔍 Read Records', path: '/read' },
         { label: '➕ Add Records', path: '/add' },
         { label: '✏️ Update Records', path: '/update' },
@@ -16,13 +27,13 @@ const Sidebar = ({ hidden = false }) => {
     ]
 
     return (
-        <div className='sidebar'>
-            <button onClick={toggleSidebarView}>
+        <div className={`sidebar ${isHidden ? 'hidden' : ''}`}>
+            <button className='toggle-button' onClick={toggleSidebarView}>
                 {isHidden ? '⇥' : '⇤'}
             </button>
 
             {!isHidden && (
-                <nav>
+                <><nav>
                     <ul className='sidebar-items'>
                         {sidebarItems.map((item, idx) => (
                             <li key={idx}
@@ -34,6 +45,11 @@ const Sidebar = ({ hidden = false }) => {
                         ))}
                     </ul>
                 </nav>
+                
+                {/* TODO: Convert logout button to profile + user? may need to add further communication then */}
+                <button className='logout-button' onClick={handleLogout}>
+                    Logout
+                </button></>
             )}
         </div>
     );

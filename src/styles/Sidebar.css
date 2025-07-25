@@ -1,0 +1,42 @@
+/* TODO: discretion to integrate this css to App.css
+for ease lang to in merging */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #4b4b4b;
+    padding: 1rem;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.hidden {
+    width: 60px;
+}
+
+.toggle-button {
+    position: absolute;
+    right: 10px;
+}
+
+.sidebar.hidden .toggle-button {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.sidebar-items {
+    list-style: none;
+    padding: 0;
+    margin-top: 5rem;
+}
+
+.sidebar-items li {
+    margin-bottom: 1rem;
+}
+
+.logout-button {
+    margin-top: 10rem;
+
+}
