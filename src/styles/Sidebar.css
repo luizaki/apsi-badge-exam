@@ -5,20 +5,22 @@ for ease lang to in merging */
     top: 0;
     left: 0;
     height: 100vh;
-    width: 250px;
+    width: 20%;
     background-color: #4b4b4b;
     padding: 1rem;
     z-index: 1000;
     overflow-y: auto;
+    transition: left 0.5s ease;
 }
 
 .sidebar.hidden {
-    width: 60px;
+    left: -20%;
 }
 
 .toggle-button {
     position: fixed;
     left: calc(20% + 20px);
+    transition: left 0.5s ease;
 }
 
 .sidebar.hidden .toggle-button {
