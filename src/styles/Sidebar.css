@@ -4,7 +4,7 @@ for ease lang to in merging */
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 20%;
     background-color: #4b4b4b;
     padding: 1rem;
@@ -40,4 +40,20 @@ for ease lang to in merging */
 .logout-button {
     margin-top: 10rem;
 
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60%;
+    }
+
+    .sidebar.hidden {
+        left: -60%;
+    }
+
+    .toggle-button {
+        position: fixed;
+        left: calc(60% + 20px);
+        transition: left 0.5s ease;
+    }
 }

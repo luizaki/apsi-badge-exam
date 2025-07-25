@@ -16,3 +16,14 @@ for ease lang to in merging */
     margin-left: 0;
     max-width: 100vw;
 }
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .page-layout.sidebar-hidden .content {
+        max-width: 100%;
+    }
+}
