@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Sidebar.css';
+import { useUserContext } from '../providers/UserProvider';
 
 const Sidebar = ({ hidden = false, onToggle }) => {
+    const { setIsAuthenticated } = useUserContext();
     const [isHidden, setIsHidden] = useState(hidden);
     const loc = useLocation();
     const navi = useNavigate();
@@ -14,6 +16,7 @@ const Sidebar = ({ hidden = false, onToggle }) => {
     }
 
     const handleLogout = () => {
+        setIsAuthenticated(false);
         navi('/');
     }
 
