@@ -4,13 +4,26 @@ for ease lang to in merging */
     display: flex;
 }
 
-.page-layout.sidebar-hidden .content {
-    margin-left: 60px;
-}
-
 .content {
-    margin-left: 250px;
+    margin-left: 20vw;
     padding: 2rem;
     min-height: 100vh;
     flex: 1;
+    transition: margin-left 0.5s ease;
+}
+
+.page-layout.sidebar-hidden .content {
+    margin-left: 0;
+    max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .page-layout.sidebar-hidden .content {
+        max-width: 100%;
+    }
 }
