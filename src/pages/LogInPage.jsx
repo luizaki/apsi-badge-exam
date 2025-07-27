@@ -11,7 +11,7 @@ function LogInPage() {
     const navi = useNavigate();
 
     const login = async () =>  {
-        const hashedPassword = await generateHash('654321');
+        const hashedPassword = await generateHash(password);
         console.log(hashedPassword);
 
         const user = users.find((user)=> user.HauEmail === hauEmail && user.password === hashedPassword);
