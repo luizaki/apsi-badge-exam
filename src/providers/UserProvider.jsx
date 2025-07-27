@@ -5,7 +5,9 @@ const UserContext = createContext();
 
 export function UserProvider({ children }) {
 
-    const [users, setUsers] = useState([...initialUsers])
+    const [users, setUsers] = useState([...initialUsers]);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    
     /**
      * 
      * @param {Object} user - A user object
@@ -57,7 +59,7 @@ export function UserProvider({ children }) {
     }
 
     return (
-        <UserContext value={{users, addUser, updateUser, deleteUser}}>
+        <UserContext value={{users, isAuthenticated, setIsAuthenticated, addUser, updateUser, deleteUser}}>
             {children}
         </UserContext>
     )

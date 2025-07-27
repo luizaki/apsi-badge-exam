@@ -7,12 +7,15 @@ export default function EditRecordsPage() {
     const {deleteUser, users} = useUserContext();
 
     return (
-        <PageLayout title={'Delete Records'}>
-            <UserList
-                users={users}
-                onDeleteUser={deleteUser}
-                disabled={false}
-            />
-        </PageLayout>
+        <>
+            <PageLayout title={'Delete Records'}>
+                <UserList
+                    users={users}
+                    onDeleteUser={deleteUser}
+                    disabled={false}
+                />
+            </PageLayout>
+        </>
+        
     );
 };

@@ -8,6 +8,7 @@ import EditRecordsPage from './pages/EditRecordsPage';
 import DeleteRecordsPage from './pages/DeleteRecordsPage';
 import ReadRecordsPage from './pages/ReadRecordsPage';
 import { UserProvider } from './providers/UserProvider';
+import Error404Page from './pages/Error404Page';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <Route path='add' element={<AddRecordsPage />} />
           <Route path='update' element={<EditRecordsPage />} />
           <Route path='delete' element={<DeleteRecordsPage />} />
+          <Route path='*' element={<Error404Page />} />
+
         </Routes>
       </Router>
     </UserProvider>
