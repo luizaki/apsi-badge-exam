@@ -43,6 +43,10 @@
     margin-top: 5rem;
 }
 
+.sidebar-icon {
+    width: 1.2em;
+}
+
 .sidebar-items li {
     margin-bottom: 1rem;
 }
