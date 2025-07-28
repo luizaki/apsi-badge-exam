@@ -94,35 +94,14 @@ h1 {
 }
 
 .error-page {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Press Start 2P', cursive;
-  text-align: center;
-}
-
-.error-page {
   height: calc(100vh - 4rem);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Press Start 2P', cursive;
   text-align: center;
   width: 100vw;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.go-back {
-    margin: auto 1.5rem 1rem;
-    background-color: #fdd762;
-    border: 2px solid #633c17;
-    font-weight: bold;
-    padding: 0.5rem;
-    cursor: pointer;
-    font-family: inherit;
-    color: black;
-    border-radius: 5px;
 }
