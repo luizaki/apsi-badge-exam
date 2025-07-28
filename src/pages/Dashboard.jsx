@@ -25,8 +25,8 @@ function Dashboard() {
                 </PageLayout>
             ) : (
                 <>
-                    <h1>Error 403. User is not authenticated.</h1>
-                    <button onClick={() => navi('/login')}>Go back to login</button> 
+                    <h1 className='error-page'>Error 403. User is not authenticated.</h1>
+                    <button className='go-back' onClick={() => navi('/login')}>Go back to login</button> 
                 </>
             ) }
         </>
