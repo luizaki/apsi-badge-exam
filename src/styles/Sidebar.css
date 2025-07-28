@@ -7,7 +7,7 @@
     height: 100%;
     width: 20vw;
     background-color: #a67c52;
-    border-right: 4px solid #633c17;
+    border-right: 2px solid #633c17;
     padding: 1rem;
     z-index: 1000;
     overflow-y: auto;
@@ -47,7 +47,6 @@
 .sidebar-items li {
     margin-bottom: 1rem;
 }
-
 .sidebar-items li a {
     display: inline-block;
     width: 100%;
@@ -57,9 +56,18 @@
     border: 2px solid #633c17;
     color: #3b2e1b;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-items li.active a {
+    background-color: #ffe57f;
+}
+
+.sidebar-items li a:hover {
+    background-color: #e9cda9;
+}
+
+.sidebar-items li.active a:hover {
     background-color: #ffe57f;
 }
 
