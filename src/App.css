@@ -7,6 +7,8 @@
   --button-bg: #ffd966;
   --button-hover-bg: #fff2b3;
   --font-family: 'Press Start 2P', cursive;
+  --green: #4CAF50;
+  --red: #f44336;
 }
 
 body, html, #root {
@@ -75,7 +77,7 @@ button {
   padding: 0.75em 1.5em;
   cursor: pointer;
   box-shadow: 4px 4px 0 #7c4a1e;
-  transition: transform 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -83,7 +85,9 @@ button {
 button:hover {
   background: var(--button-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 6px 6px 0 #7c4a1e;
+  box-shadow: 6px 6px 0 #a8682f;
+  border: 3px solid #754321;
+  color: #754321;
 }
 
 h1 {
@@ -91,4 +95,25 @@ h1 {
   margin-bottom: 1rem;
   font-family: var(--font-family);
   text-shadow: 2px 2px 0 #fffbe6;
+}
+
+input:focus {
+    outline: solid var(--border-color);
+}
+
+input:not(:placeholder-shown) {
+    border: 2px solid var(--border-color);
+}
+
+.error-page {
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

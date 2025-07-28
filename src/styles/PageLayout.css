@@ -11,6 +11,7 @@ for ease lang to in merging */
 .content-wrapper {
     flex: 1;
     margin-left: 15vw;
+    margin-right: auto;
     padding: 2rem;
     transition: margin-left 0.5s ease;
 }
