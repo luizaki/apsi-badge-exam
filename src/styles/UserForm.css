@@ -1,58 +1,57 @@
 /* Basic styling only. Add styles specific to UserForm here */
 
-:root {
-    --green: #4CAF50;
-    --red: #f44336;
-}
-
 .user-form {
-    border: 1px solid darkgray;
+    border: 4px solid var(--border-color);
     padding: 20px;
     width: 420px;
-    margin: auto;
-    border-radius: 5px;
+    margin: 5vh auto;
+    background-color: #fdf5dc;
+    box-shadow: 6px 6px 0 #7c4a1e;
 }
 
+
 .input-field {
-    width: 90%;
-    border: 0;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--font-family);
+  background: var(--record-bg);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .input-field:user-valid {
-    border: 1px solid var(--green);
+  border: 2px solid var(--green);
 }
 
 .input-field:user-invalid {
-    border: 1px solid var(--red);
+  border: 2px solid var(--red);
 }
 
-.input-field:placeholder-shown {
-    border: 0;
-}
-
-/* TODO: center this dialog */
 .dialog {
-    position: absolute;
-    margin: auto;
-    top: 40%;
-    border-radius: 20px;
+  position: absolute;
+  margin: auto;
+  top: 40%;
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+  font-family: var(--font-family);
 }
 
 .dialog-btn {
-    color: white;
-    padding: 0.5em 2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  font-family: var(--font-family);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
 }
 
 .success {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 .failure {
-    background-color: var(--red);
+  background-color: var(--red);
 }

@@ -1,5 +1,3 @@
-/* TODO: discretion to integrate this css to App.css
-for ease lang to in merging */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -7,26 +5,35 @@ for ease lang to in merging */
     top: 0;
     left: 0;
     height: 100%;
-    width: 20%;
-    background-color: #4b4b4b;
+    width: 15vw;
+    background-color: #a67c52;
     padding: 1rem;
     z-index: 1000;
     overflow-y: auto;
     transition: left 0.5s ease;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 .sidebar.hidden {
-    left: -20%;
+    left: -15vw;
 }
 
 .toggle-button {
     position: fixed;
-    left: calc(20% + 20px);
+    left: calc(15vw + 10px);
+    top: 1rem;
+    background-color: #fdd762;
+    border: 2px solid #633c17;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100;
     transition: left 0.5s ease;
 }
 
 .sidebar.hidden .toggle-button {
-    left: 20px;
+    left: 10px;
 }
 
 .sidebar-items {
@@ -39,22 +46,47 @@ for ease lang to in merging */
     margin-bottom: 1rem;
 }
 
+.sidebar-items li a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    background-color: #fdf5dc;
+    border: 2px solid #633c17;
+    color: #3b2e1b;
+    text-align: center;
+}
+
+.sidebar-items li.active a {
+    background-color: #ffe57f;
+}
+
 .logout-button {
     margin: auto 1.5rem 1rem;
+    background-color: #fdd762;
+    border: 2px solid #633c17;
+    font-weight: bold;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    color: black;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 60%;
+        width: 60vw;
     }
 
     .sidebar.hidden {
-        left: -60%;
+        left: -60vw;
     }
 
     .toggle-button {
-        position: fixed;
-        left: calc(60% + 20px);
-        transition: left 0.5s ease;
+        left: calc(60vw + 10px);
+    }
+
+    .sidebar.hidden .toggle-button {
+        left: 10px;
     }
 }

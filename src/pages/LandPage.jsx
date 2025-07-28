@@ -2,12 +2,13 @@ import { useNavigate } from 'react-router-dom';
 
 function LandPage() {
     const navi = useNavigate();
-    return(
-        <div>
-            <h1> FARM (ft. Dwayne) MEMBER MANAGEMENT</h1>
-            <div>
-                <button onClick={()=> navi('/login')}>LOGIN HERE</button>
-            </div>
+
+    return (
+        <div className="centered-container">
+        <div className="box">
+            <h1>FARM (ft. Dwayne) MEMBER MANAGEMENT</h1>
+            <button onClick={() => navi('/login')}>LOGIN HERE</button>
+        </div>
         </div>
     );
 }

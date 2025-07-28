@@ -21,7 +21,6 @@ const Sidebar = ({ hidden = false, onToggle }) => {
     }
 
     const sidebarItems = [
-        // TODO: wireframe unclear on how to redirect to dashboard so adding it for now
         { label: '📊 Dashboard', path: '/dashboard' },
         { label: '🔍 Read Records', path: '/read' },
         { label: '➕ Add Records', path: '/add' },
@@ -36,23 +35,24 @@ const Sidebar = ({ hidden = false, onToggle }) => {
             </button>
 
             {!isHidden && (
-                <><nav>
-                    <ul className='sidebar-items'>
-                        {sidebarItems.map((item, idx) => (
-                            <li key={idx}
-                                className={loc.pathname === item.path ? 'active' : ''}>
-                                <Link to={item.path}>
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-                
-                {/* TODO: Convert logout button to profile + user? may need to add further communication then */}
-                <button className='logout-button' onClick={handleLogout}>
-                    Logout
-                </button></>
+                <>
+                    <nav>
+                        <ul className='sidebar-items'>
+                            {sidebarItems.map((item, idx) => (
+                                <li key={idx}
+                                    className={loc.pathname === item.path ? 'active' : ''}>
+                                    <Link to={item.path}>
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <button className='logout-button' onClick={handleLogout}>
+                        Logout
+                    </button>
+                </>
             )}
         </div>
     );

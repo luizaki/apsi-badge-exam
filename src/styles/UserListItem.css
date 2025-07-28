@@ -1,27 +1,33 @@
 .list-item {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;
-    place-items: center;
-    gap: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;
+  place-items: center;
+  gap: 1rem;
+  font-family: var(--font-family);
+  color: var(--text-color);
 }
 
 .edit-input-field {
-    width: 100%;
-    border: 0;
-    padding: 1rem;
-    border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--font-family);
+  background-color: var(--record-bg);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .display {
-    width: 100%;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    background-color: #ccc;
-    text-align: left;
-    color: black;
+  width: 100%;
+  background-color: var(--record-bg);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  text-align: left;
 }
 
 .btn {
-    width: 100%;
+  width: 100%;
+  font-family: var(--font-family);
 }

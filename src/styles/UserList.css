@@ -1,13 +1,34 @@
 *, *::after, *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.user-list {
+  display: grid;
+  list-style-type: none;
+  padding: 2rem;
+  margin: 0;
+  border: 4px solid var(--border-color);
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+  border-radius: 0;
+  gap: 1.5rem;
+  font-family: var(--font-family);
+}
+
+.records-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .user-list {
     display: grid;
-    list-style-type: none;
-    padding: 2rem;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
     gap: 1rem;
+    padding: 2rem;
+    border: 4px solid #5D3A00;
+    background-color: #FAF1DC;
+    box-shadow: 6px 6px 0 #7c4a1e;
+    width: fit-content;
+    max-width: 90%;
 }
