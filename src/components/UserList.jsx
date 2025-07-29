@@ -27,7 +27,7 @@ const UserList = ({ users, onUpdateUser, onDeleteUser, disabled = false }) => {
     }
 
     return (
-        <div className='container'>
+        <div className='records-container'>
             { users.map(user => (
                 <UserListItem
                     key={user.id}
