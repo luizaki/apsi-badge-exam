@@ -13,7 +13,6 @@
 .input-field {
   width: 100%;
   padding: 1rem;
-  font-family: var(--font-family);
   background: var(--record-bg);
   border: 2px solid var(--border-color);
   color: var(--text-color);
@@ -39,13 +38,11 @@
   border-radius: 0;
   padding: 2rem;
   text-align: center;
-  font-family: var(--font-family);
   color: #3b2e1b;
   z-index: 9999;
 }
 
 .dialog-btn {
-  font-family: var(--font-family);
   font-size: 1rem;
   padding: 0.75rem 2rem;
   margin-top: 1rem;

@@ -4,7 +4,6 @@
   grid-template-columns: 1fr 1.5fr auto;
   place-items: center;
   gap: 1rem;
-  font-family: var(--font-family);
   color: var(--text-color);
 }
 
@@ -17,7 +16,6 @@
 .edit-input-field {
   width: 100%;
   padding: 1rem;
-  font-family: var(--font-family);
   background-color: var(--record-bg);
   border: 2px solid var(--border-color);
   color: var(--text-color);
@@ -28,14 +26,12 @@
   background-color: var(--record-bg);
   border: 2px solid var(--border-color);
   padding: 1rem;
-  font-family: var(--font-family);
   color: var(--text-color);
   text-align: left;
 }
 
 .btn {
   flex: 1 1 0;
-  font-family: var(--font-family);
   width: 100%;
 }
 

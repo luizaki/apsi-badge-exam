@@ -25,8 +25,10 @@ const PageLayout = ({ children, title }) => {
                 )
                 : (
                     <>
-                        <h1>Error 403. User is not authenticated.</h1>
-                        <button onClick={() => navi('/login')}>Go back to login</button>
+                        <div className='error-page'>
+                            <h1>Error 403. User is not authenticated.</h1>
+                            <button onClick={() => navi('/login')}>Go back to login</button>
+                        </div>
                     </>
                 )
             }

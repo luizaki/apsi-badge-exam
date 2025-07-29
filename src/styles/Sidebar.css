@@ -5,31 +5,32 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 15vw;
+    width: 20vw;
     background-color: #a67c52;
+    border-right: 2px solid #633c17;
     padding: 1rem;
     z-index: 1000;
     overflow-y: auto;
     transition: left 0.5s ease;
-    font-family: 'Press Start 2P', sans-serif;
 }
 
 .sidebar.hidden {
-    left: -15vw;
+    left: -20vw;
 }
 
 .toggle-button {
     position: fixed;
-    left: calc(15vw + 10px);
+    left: calc(20vw + 10px);
     top: 1rem;
     background-color: #fdd762;
     border: 2px solid #633c17;
     border-radius: 5px;
-    padding: 0.25rem 0.5rem;
+    padding: 10px 15px;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     z-index: 1100;
-    transition: left 0.5s ease;
+    transition: all 0.1s ease, left 0.5s ease;
 }
 
 .sidebar.hidden .toggle-button {
@@ -40,12 +41,16 @@
     list-style: none;
     padding: 0;
     margin-top: 5rem;
+    font-size: 0.75rem;
+}
+
+.sidebar-icon {
+    width: 1.2em;
 }
 
 .sidebar-items li {
     margin-bottom: 1rem;
 }
-
 .sidebar-items li a {
     display: inline-block;
     width: 100%;
@@ -55,9 +60,18 @@
     border: 2px solid #633c17;
     color: #3b2e1b;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-items li.active a {
+    background-color: #ffe57f;
+}
+
+.sidebar-items li a:hover {
+    background-color: #e9cda9;
+}
+
+.sidebar-items li.active a:hover {
     background-color: #ffe57f;
 }
 
@@ -68,7 +82,6 @@
     font-weight: bold;
     padding: 0.5rem;
     cursor: pointer;
-    font-family: inherit;
     color: black;
     border-radius: 5px;
 }
