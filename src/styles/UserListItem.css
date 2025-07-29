@@ -1,11 +1,17 @@
 .list-item {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;
+  grid-template-columns: 1fr 1.5fr auto;
   place-items: center;
   gap: 1rem;
   color: var(--text-color);
 }
+
+.list-item span:first-child {
+  max-width: 25em;
+  min-width: 19em;
+}
+
 
 .edit-input-field {
   width: 100%;
@@ -25,5 +31,14 @@
 }
 
 .btn {
+  flex: 1 1 0;
   width: 100%;
 }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+

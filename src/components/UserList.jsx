@@ -27,7 +27,7 @@ const UserList = ({ users, onUpdateUser, onDeleteUser, disabled = false }) => {
     }
 
     return (
-        <ul className='user-list'>
+        <div className='container'>
             { users.map(user => (
                 <UserListItem
                     key={user.id}
@@ -37,7 +37,7 @@ const UserList = ({ users, onUpdateUser, onDeleteUser, disabled = false }) => {
                     disabled={disabled}
                 />
             ))}
-        </ul>
+        </div>   
     );
 };
 

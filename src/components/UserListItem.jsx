@@ -93,49 +93,50 @@ const UserListItem = ({ user, onUpdate, onDelete, disabled = false}) => {
                 <span className='display'>{editEmail}</span>                
             )}
 
-
-            {isEditing ? (
-                <>
-                    <button
-                        className='btn'
-                        onClick={handleSaveEdit}
-                        disabled={isUpdating || !editName?.trim()}
-                    >
-                        {isUpdating ? 'Saving...' : 'Save'}
-                    </button>
-                    <button
-                        className='btn'
-                        onClick={handleCancelEdit}
-                        disabled={isUpdating}
-                    >
-                        Cancel
-                    </button>
-                </>
-            ) : (
-                <>
-                    {onUpdate && (
+            <div className='actions'>
+                {isEditing ? (
+                    <>
                         <button
                             className='btn'
-                            onClick={handleEdit}
-                            disabled={itemDisabled}
+                            onClick={handleSaveEdit}
+                            disabled={isUpdating || !editName?.trim()}
                         >
-                        {/* Change this to a pencil icon */}
-                        Edit
+                            {isUpdating ? 'Saving...' : 'Save'}
                         </button>
-                    )}
-
-                    {onDelete && (
                         <button
                             className='btn'
-                            onClick={handleDelete}
-                            disabled={itemDisabled}
+                            onClick={handleCancelEdit}
+                            disabled={isUpdating}
                         >
-                            {isDeleting ? 'Deleting...' : 'Delete'}
+                            Cancel
                         </button>
-                    )}
+                    </>
+                ) : (
+                    <>
+                        {onUpdate && (
+                            <button
+                                className='btn'
+                                onClick={handleEdit}
+                                disabled={itemDisabled}
+                            >
+                            {/* Change this to a pencil icon */}
+                            Edit
+                            </button>
+                        )}
 
-                </>
-            )}
+                        {onDelete && (
+                            <button
+                                className='btn'
+                                onClick={handleDelete}
+                                disabled={itemDisabled}
+                            >
+                                {isDeleting ? 'Deleting...' : 'Delete'}
+                            </button>
+                        )}
+
+                    </>
+                )}
+            </div>
         </li>
     )
 }
