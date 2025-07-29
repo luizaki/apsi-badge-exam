@@ -61,7 +61,6 @@ body, html, #root {
 .form-container input {
   padding: 0.8rem 1rem;
   font-size: 0.75em;
-  font-family: var(--font-family);
   border: 3px solid var(--border-color);
   background-color: #fffbe6;
   color: #42210b;
@@ -72,7 +71,6 @@ button {
   background: var(--button-bg);
   border: 3px solid var(--border-color);
   color: #42210b;
-  font-family: var(--font-family);
   font-size: 0.75em;
   padding: 0.75em 1.5em;
   cursor: pointer;
@@ -93,8 +91,11 @@ button:hover {
 h1 {
   font-size: 1.1em;
   margin-bottom: 1rem;
-  font-family: var(--font-family);
   text-shadow: 2px 2px 0 #fffbe6;
+}
+
+input {
+    font-family: var(--font-family);
 }
 
 input:focus {

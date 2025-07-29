@@ -17,12 +17,16 @@ function LogInPage() {
 
         // Ideally, protected routes are achieved through backend stuff
         // but since we don't have that, this will have to do.
-        if (user) {
-            setIsAuthenticated(true);
-            navi('/dashboard');
+        if (hauEmail === '' || password === '') {
+            alert('Please fill in the HAU email & password');
         } else {
-            setIsAuthenticated(false);
-            alert('Please fill in the HAU Email & password');
+            if (user) {
+                setIsAuthenticated(true);
+                navi('/dashboard');
+            } else {
+                setIsAuthenticated(false);
+                alert('Please make sure HAU email & password is correct');
+            }
         }
     };
 
@@ -31,6 +35,7 @@ function LogInPage() {
         <div className="form-container">
             <h1 style={{ textAlign: 'center' }}>LOGIN</h1>
             <input
+            type="email"
             placeholder="HAU Email"
             value={hauEmail}
             onChange={(e) => setHauEmail(e.target.value)}
