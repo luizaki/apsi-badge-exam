@@ -10,11 +10,10 @@ import ReadRecordsPage from './pages/ReadRecordsPage';
 import { UserProvider } from './providers/UserProvider';
 import Error404Page from './pages/Error404Page';
 
-
 function App() {
   return (
     <UserProvider>
-      <Router>
+      <Router basename='/apsi-badge-exam'>
         <Routes>
           <Route path='/' element={<LandPage />} />
           <Route path='/login' element={<LogInPage />} />
